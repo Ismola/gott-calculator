@@ -235,22 +235,125 @@ button.ghost {
 }
 
 .share-card {
-  background: linear-gradient(145deg, #f8fff9 0%, #fff2e6 40%, #ffebdf 100%);
-  border-radius: 1rem;
-  border: 2px solid #f2d3b8;
-  padding: 1rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border: 1.5px solid #e8cdb2;
+  box-shadow: 0 4px 24px rgba(85,37,8,0.12);
 }
 
-.share-grid {
-  display: grid;
-  grid-template-columns: 1fr 140px;
-  gap: 0.8rem;
+.share-card-top {
+  background: linear-gradient(135deg, #e86d2f 0%, #d4522a 100%);
+  padding: 1.1rem 1.2rem 1rem;
+  color: #fff;
+}
+
+.share-card-meta {
+  display: flex;
   align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+  opacity: 0.85;
 }
 
-.share-grid h2 {
+.share-brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  display: inline-block;
+}
+
+.share-brand-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.share-event-name {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.share-elapsed-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.share-card-body {
+  background: #fff;
+  padding: 1rem 1.2rem;
+}
+
+.share-big-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #f0e0d0;
+  margin-bottom: 0.9rem;
+}
+
+.share-big-pct {
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.share-big-label {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.share-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.share-window {
+  flex: 1;
+}
+
+.share-window-hint {
+  margin: 0 0 0.15rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--subtle);
+  font-weight: 700;
+}
+
+.share-window-value {
+  margin: 0;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.share-qr-wrap {
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.share-confidence-note {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--subtle);
+  text-align: right;
 }
 
 .json-box {
@@ -308,7 +411,7 @@ button.ghost {
     grid-template-columns: 1fr;
   }
 
-  .share-grid {
-    grid-template-columns: 1fr;
+  .share-card-bottom {
+    flex-wrap: wrap;
   }
 }

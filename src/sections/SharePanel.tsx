@@ -71,35 +71,43 @@ export function SharePanel({ params, result }: SharePanelProps) {
     }
 
     const pct = (result.probabilityEndsBeforeHorizon * 100).toFixed(1)
-    const horizonLabel = `${params.horizon.toLocaleString()} ${params.unit}${params.horizon !== 1 ? 's' : ''}`
-    const elapsedLabel = `${params.elapsed.toLocaleString()} ${params.unit}${params.elapsed !== 1 ? 's' : ''}`
+    const singular = (unit: string) => unit.replace(/s$/, '')
+    const pluralise = (n: number, unit: string) => `${n.toLocaleString()} ${n === 1 ? singular(unit) : unit}`
+    const horizonLabel = pluralise(params.horizon, params.unit)
+    const elapsedLabel = pluralise(params.elapsed, params.unit)
 
     return (
         <section className="panel share-panel">
             <div className="share-card" ref={cardRef}>
-                <div className="share-card-header">
-                    <span className="share-brand-label">Gott Calculator</span>
-                    <div className="share-qr-wrap">
-                        <QRCodeSVG value={publicShareUrl} size={80} />
+                <div className="share-card-top">
+                    <div className="share-card-meta">
+                        <span className="share-brand-dot" />
+                        <span className="share-brand-label">Gott Calculator</span>
                     </div>
+                    <p className="share-event-name">{params.event}</p>
+                    <p className="share-elapsed-note">observed for {elapsedLabel}</p>
                 </div>
 
-                <p className="share-event-name">{params.event}</p>
+                <div className="share-card-body">
+                    <div className="share-big-stat">
+                        <span className="share-big-pct">{pct}%</span>
+                        <span className="share-big-label">
+                            chance it ends in<br />the next {horizonLabel}
+                        </span>
+                    </div>
 
-                <div className="share-big-stat">
-                    <span className="share-big-pct">{pct}%</span>
-                    <span className="share-big-label">
-                        chance it ends in<br />the next {horizonLabel}
-                    </span>
+                    <div className="share-card-bottom">
+                        <div className="share-window">
+                            <p className="share-window-hint">May still last</p>
+                            <p className="share-window-value">{result.formattedWindow}</p>
+                        </div>
+                        <div className="share-qr-wrap">
+                            <QRCodeSVG value={publicShareUrl} size={88} />
+                        </div>
+                    </div>
+
+                    <p className="share-confidence-note">{Math.round(params.confidence * 100)}% confidence · gott-calculator.ismola.dev</p>
                 </div>
-
-                <div className="share-divider" />
-
-                <p className="share-duration-hint">How long it might still last</p>
-                <p className="share-duration-value">{result.formattedWindow}</p>
-                <p className="share-meta-note">
-                    Observed: {elapsedLabel} · {Math.round(params.confidence * 100)}% confidence
-                </p>
             </div>
 
             <div className="actions">
