@@ -238,7 +238,7 @@ button.ghost {
   border-radius: 1.2rem;
   overflow: hidden;
   border: 1.5px solid #e8cdb2;
-  box-shadow: 0 4px 24px rgba(85,37,8,0.12);
+  box-shadow: 0 4px 24px rgba(85, 37, 8, 0.12);
 }
 
 .share-card-top {
@@ -259,7 +259,7 @@ button.ghost {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   display: inline-block;
 }
 
@@ -281,7 +281,7 @@ button.ghost {
 .share-elapsed-note {
   margin: 0.3rem 0 0;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .share-card-body {
