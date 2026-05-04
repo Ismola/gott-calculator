@@ -1,0 +1,9 @@
+services:
+  gott-calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gott-calculator
+    expose:
+      - "80"
+    restart: unless-stopped
