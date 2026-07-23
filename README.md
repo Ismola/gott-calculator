@@ -1,8 +1,11 @@
 # Gott Calculator
 
-Inspiration: https://www.youtube.com/watch?v=QHo-O52c5wM
-
 Web app sin backend para explorar la teoria de Gott y estimar la probabilidad de que un suceso termine.
+
+## Inspiración:
+
+[![Inspiration](https://i.ytimg.com/vi/QHo-O52c5wM/hq720.jpg?sqp=-oaymwEqCNAFEJQDSFryq4qpAxwIARUAAIhCGAHYAQHiAQoIGBACGAY4AUABuAIX&rs=AOn4CLCl6EOZ0HEfGc82fj53rvh90V9gpA&usqp=CBc)](https://www.youtube.com/watch?v=QHo-O52c5wM)
+
 
 ## Que incluye
 
